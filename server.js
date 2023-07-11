@@ -7,7 +7,7 @@ import bodyparse from "body-parser"
 import categoryRoutes from './routes/categoryRoutess.js'
 import productRoutes from "./routes/productRoutes.js"
 import cors from "cors";
-import {fileURLToPath} from 'URL';
+import {fileURLToPath} from 'url';
 dotenv.config();
 connectDB();
 const __filename=fileURLToPath(import.meta.url);
