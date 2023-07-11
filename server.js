@@ -25,7 +25,7 @@ app.use('/api/v1/category',categoryRoutes);
 app.use('/api/v1/product',productRoutes);
 const PORT=process.env.PORT||8080;
 app.use("*",function(req,res){
-    res.sendFile(path.join(_ _dirname,"./client/build/index.html"));
+    res.sendFile(path.join(__dirname,"./client/build/index.html"));
 })
 app.listen(PORT,()=>{
     console.log(`server running on port ${PORT}`);
