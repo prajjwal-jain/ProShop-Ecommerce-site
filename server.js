@@ -19,13 +19,13 @@ app.use(express.json())
 app.use(bodyparse.json());
 app.use(bodyparse.urlencoded({extended: true}));
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname,"./client/build")))
+app.use(express.static(path.join(_ _dirname,"./client/build")))
 app.use("/api/v1/auth",authRoutes);
 app.use('/api/v1/category',categoryRoutes);
 app.use('/api/v1/product',productRoutes);
 const PORT=process.env.PORT||8080;
-app.use("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"./client/build/index.html"));
+app.use("*",function(req,res){
+    res.sendFile(path.join(_ _dirname,"./client/build/index.html"));
 })
 app.listen(PORT,()=>{
     console.log(`server running on port ${PORT}`);
