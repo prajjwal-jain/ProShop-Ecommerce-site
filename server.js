@@ -11,8 +11,8 @@ import path from "path"
 import {fileURLToPath} from 'url';
 dotenv.config();
 connectDB();
-const __filename=fileURLToPath(import.meta.url);
-const __dirname=path.dirname(__filename);
+const _ _filename=fileURLToPath(import.meta.url);
+const _ _dirname=path.dirname(_ _filename);
 const app=express()
 app.use(cors());
 app.use(express.json())
