@@ -7,6 +7,7 @@ import bodyparse from "body-parser"
 import categoryRoutes from './routes/categoryRoutess.js'
 import productRoutes from "./routes/productRoutes.js"
 import cors from "cors";
+import path from "path"
 import {fileURLToPath} from 'url';
 dotenv.config();
 connectDB();
@@ -18,12 +19,13 @@ app.use(express.json())
 app.use(bodyparse.json());
 app.use(bodyparse.urlencoded({extended: true}));
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname,"./client/build")))
 app.use("/api/v1/auth",authRoutes);
 app.use('/api/v1/category',categoryRoutes);
 app.use('/api/v1/product',productRoutes);
 const PORT=process.env.PORT||8080;
-app.get("/",(req,res)=>{
-    res.send("hemlo");
+app.use("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./client/build/index.html"));
 })
 app.listen(PORT,()=>{
     console.log(`server running on port ${PORT}`);
