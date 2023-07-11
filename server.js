@@ -7,8 +7,11 @@ import bodyparse from "body-parser"
 import categoryRoutes from './routes/categoryRoutess.js'
 import productRoutes from "./routes/productRoutes.js"
 import cors from "cors";
+import {fileURLToPath} from 'URL';
 dotenv.config();
 connectDB();
+const __filename=fileURLToPath(import.meta.url);
+const__dirname=path.dirname(__filename);
 const app=express()
 app.use(cors());
 app.use(express.json())
