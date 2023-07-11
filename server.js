@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname,"./client/build")))
 app.use("/api/v1/auth",authRoutes);
 app.use('/api/v1/category',categoryRoutes);
 app.use('/api/v1/product',productRoutes);
-const PORT=process.env.PORT||8080;
+const PORT=process.env.PORT;
 app.use("*",function(req,res){
     res.sendFile(path.join(__dirname,"./client/build/index.html"));
 })
