@@ -1,6 +1,6 @@
 {
   "name": "fin",
-  "proxy": "http://localhost:8080",
+  "proxy": "https://new-ecommerce-8v29.onrender.com/",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
